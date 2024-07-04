@@ -6,10 +6,14 @@
       <list>
         <option value="$PROJECT_DIR$/maven-project01/pom.xml" />
         <option value="$PROJECT_DIR$/test_pro/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-project02/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-projectA/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-projectB/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-projectC/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
