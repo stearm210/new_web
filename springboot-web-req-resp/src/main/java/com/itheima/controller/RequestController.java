@@ -56,6 +56,7 @@ public class RequestController {
     //复杂的实体参数问题，如果有多个类属性嵌套的时候
     @RequestMapping("/complexPojo")
     public String complexPojo(User user){
+        //输出apipost中输入的信息，并返回一个ok。这里相当于user这个对象已经在网页上创建成功了
         System.out.println(user);
         return "OK";
     }
