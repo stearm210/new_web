@@ -51,4 +51,12 @@ public class RequestController {
         System.out.println(user);
         return "OK";
     }
+
+
+    //复杂的实体参数问题，如果有多个类属性嵌套的时候
+    @RequestMapping("/complexPojo")
+    public String complexPojo(User user){
+        System.out.println(user);
+        return "OK";
+    }
 }
