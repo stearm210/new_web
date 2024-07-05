@@ -21,7 +21,7 @@ public class RequestController {
         int age = Integer.parseInt(ageStr);
 
         //返回字符串等数据
-        System.out.println(name+":"+age);
+        System.out.println(name+ ":" + age);
         return "OK";
 
     }
