@@ -1,5 +1,6 @@
 package com.itheima.controller;
 
+import com.itheima.pojo.User;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,5 +38,17 @@ public class RequestController {
         System.out.println(name+ ":" + age);
         return "OK";
 
+    }
+
+
+    //2.实体参数的方法，用于传递创建多个参数的问题配置
+    //如果使用了类的方法封装，则只需要保证apipost中的参数名字与类中属性名一致即可
+
+    //请求路径
+    @RequestMapping("/simplePojo")
+
+    public String simplePojo(User user){
+        System.out.println(user);
+        return "OK";
     }
 }
