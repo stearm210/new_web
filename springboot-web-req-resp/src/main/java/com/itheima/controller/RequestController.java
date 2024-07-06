@@ -115,4 +115,12 @@ public class RequestController {
         return "OK";
     }
 
+
+    @RequestMapping("/path/{id}/{name}")
+    public String pathParam2(@PathVariable Integer id, @PathVariable String name){
+        System.out.println(id);
+        System.out.println(name);
+        return "OK";
+    }
+
 }
