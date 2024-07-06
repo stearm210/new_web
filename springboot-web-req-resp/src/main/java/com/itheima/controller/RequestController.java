@@ -68,6 +68,7 @@ public class RequestController {
     //3.数组参数的获取
     @RequestMapping("/arrayParam")
     public String arrayParam(String[] hobby){
+        //apipost中使用get方式将数据信息传入数组中，并且最后将信息进行输出
         //输出apipost中输入的信息，并返回一个ok。
         System.out.println(Arrays.toString(hobby));
         return "OK";
