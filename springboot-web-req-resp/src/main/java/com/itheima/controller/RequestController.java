@@ -2,10 +2,13 @@ package com.itheima.controller;
 
 import com.itheima.pojo.User;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.Arrays;
 
@@ -88,4 +91,12 @@ public class RequestController {
 
 
 
+    //4.日期时间参数
+    //使用 @DateTimeFormat 注解完成日期参数格式转换
+    //这个LocalDateTime用于定义与封装时间
+    @RequestMapping("/dateParam")
+    public String dateParam(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime updateTime){
+        System.out.println(updateTime);
+        return "OK";
+    }
 }
