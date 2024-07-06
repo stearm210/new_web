@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.*;
 import java.util.Arrays;
+
 
 /*
 * 测试请求参数接收
@@ -74,7 +76,15 @@ public class RequestController {
         return "OK";
     }
 
-
+    //集合的请求路径问题
+    //使用@RequestParam 将多个请求参数的值封装到list队列中
+    @RequestMapping("/listParam")
+    public String listParam(@RequestParam List<String> hobby){
+        //apipost中使用get方式将数据信息传入数组中，并且最后将信息进行输出
+        //输出apipost中输入的信息，并返回一个ok。
+        System.out.println(hobby);
+        return "OK";
+    }
 
 
 
