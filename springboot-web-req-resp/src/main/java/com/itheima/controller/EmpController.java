@@ -5,6 +5,7 @@ import com.itheima.pojo.Result;
 import com.itheima.service.EmpService;
 import com.itheima.service.impl.EmpServiceA;
 import com.itheima.utils.XmlParserUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +13,11 @@ import java.util.List;
 
 @RestController
 public class EmpController {
+    @Autowired//运行时，IOC容器会提供该类型的bean对象，并赋值给这个变量，实现依赖注入
+
+
     //controller:控制层，接收前端发送的请求，对请求进行处理，并响应数据。
-    private EmpService empService=new EmpServiceA();
+    private EmpService empService;
 
     @RequestMapping("/listEmp")
     public Result list(){

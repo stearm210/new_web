@@ -4,12 +4,18 @@ import com.itheima.dao.EmpDao;
 import com.itheima.dao.impl.EmpDaoA;
 import com.itheima.pojo.Emp;
 import com.itheima.service.EmpService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component//将当前类交给IOC容器管理,成为IOC容器中的
 public class EmpServiceA implements EmpService {
+
+    @Autowired//运行时，IOC容器会提供该类型的bean对象，并赋值给这个变量，实现依赖注入
+
     //创建一个dao层的对象，对之前的数据进行处理
-    private EmpDao empDao=new EmpDaoA();
+    private EmpDao empDao;
     @Override
     public List<Emp> listEmp() {
         //1.调用dao，获取数据
