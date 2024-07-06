@@ -9,6 +9,9 @@ import java.util.List;
 /**
  * 测试响应数据
  */
+//@ResponseBody将方法返回值直接响应，如果返回值类型是 实体对象/集合，将会转换为ISON格式响应
+//位置:Controller方法上/类上
+
 @RestController
 public class ResponseController {
 
