@@ -56,15 +56,15 @@ public class ResponseController {
     }
 
     @RequestMapping("/getAddr")
-    public Address getAddr(){
+    public Result getAddr(){
         Address addr = new Address();
         addr.setProvince("广东");
         addr.setCity("深圳");
-        return addr;
+        return Result.success(addr);
     }
 
     @RequestMapping("/listAddr")
-    public List<Address> listAddr(){
+    public Result listAddr(){
         List<Address> list = new ArrayList<>();
 
         Address addr = new Address();
@@ -77,7 +77,7 @@ public class ResponseController {
 
         list.add(addr);
         list.add(addr2);
-        return list;
+        return Result.success(list);
     }
 
 }
