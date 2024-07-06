@@ -3,10 +3,7 @@ package com.itheima.controller;
 import com.itheima.pojo.User;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -108,4 +105,14 @@ public class RequestController {
         System.out.println(user);
         return "OK";
     }
+
+    //6.路径参数
+    //由于路径不一定是一样的，因此需要使用一个id来代表网页路径
+    //使用@PathVariable来将路径绑定为id，使得可以获取路径参数信息
+    @RequestMapping("/path/{id}")
+    public String pathParam(@PathVariable Integer id){
+        System.out.println(id);
+        return "OK";
+    }
+
 }
