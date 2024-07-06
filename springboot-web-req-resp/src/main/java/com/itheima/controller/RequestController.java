@@ -3,6 +3,7 @@ package com.itheima.controller;
 import com.itheima.pojo.User;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -97,6 +98,14 @@ public class RequestController {
     @RequestMapping("/dateParam")
     public String dateParam(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime updateTime){
         System.out.println(updateTime);
+        return "OK";
+    }
+
+    //5.JSON数据传输
+    //JSON参数:JSON数据键名与形参对象属性名相同，定义POJ0类型形参即可接收参数，需要使用 @RequestBody 标识
+    @RequestMapping("/jsonParam")
+    public String jsonParam(@RequestBody User user){
+        System.out.println(user);
         return "OK";
     }
 }
