@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+
 /*
 * 测试请求参数接收
 * */
@@ -60,4 +62,19 @@ public class RequestController {
         System.out.println(user);
         return "OK";
     }
+
+
+
+    //3.数组参数的获取
+    @RequestMapping("/arrayParam")
+    public String arrayParam(String[] hobby){
+        //输出apipost中输入的信息，并返回一个ok。
+        System.out.println(Arrays.toString(hobby));
+        return "OK";
+    }
+
+
+
+
+
 }
