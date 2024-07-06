@@ -37,6 +37,7 @@ public class Result {
         this.data = data;
     }
 
+    //静态方法用于返回默认数据
     public static Result success(Object data){
         return new Result(1, "success", data);
     }
