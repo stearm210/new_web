@@ -10,6 +10,7 @@ import java.util.List;
 
 //@Component//将当前类交给IOC容器管理,成为IOC容器中的bean
 
+//可用于声明一个bean
 @Repository//标注在数据访问类上(由于与mybatis整合，用的少)
 
 public class EmpDaoA implements EmpDao{
