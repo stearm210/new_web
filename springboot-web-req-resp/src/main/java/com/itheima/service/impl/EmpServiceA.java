@@ -5,10 +5,15 @@ import com.itheima.dao.impl.EmpDaoA;
 import com.itheima.pojo.Emp;
 import com.itheima.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+//这里同类型的bean存在多个(empserviceA和empserviceB),这里使用方法一进行依赖注入的操作
+//使用@primary会默认调用empserviceA这个bean注解进行后续操作
+@Primary
 
 //@Component//将当前类交给IOC容器管理,成为IOC容器中的
 
