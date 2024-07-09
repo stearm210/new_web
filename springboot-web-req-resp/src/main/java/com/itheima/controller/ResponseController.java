@@ -47,8 +47,6 @@ public class ResponseController {
 //        return list;
 //    }
 
-
-
     ///这里将接口的结果进行统一的格式管理
     @RequestMapping("/hello")
     public Result hello(){
