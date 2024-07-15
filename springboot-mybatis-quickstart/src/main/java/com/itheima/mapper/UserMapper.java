@@ -17,3 +17,6 @@ public interface UserMapper {
     @Select("select * from user")
     public List<User> list();
 }
+
+
+
