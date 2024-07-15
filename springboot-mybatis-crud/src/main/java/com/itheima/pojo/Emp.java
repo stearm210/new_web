@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+//这里使用注解使得get、set、有参无参构造可以进行省略
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
