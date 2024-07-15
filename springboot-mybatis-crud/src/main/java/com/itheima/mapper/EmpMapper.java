@@ -9,7 +9,7 @@ public interface EmpMapper {
     @Delete("delete from emp where id = #{id}")
     //public void delete(Integer id);
 
-    //这里的delete的返回值表示此次操作影响的操作数
+    //这里的delete的返回值表示此次操作影响到的数据库中的记录数
     //比方说这次操作到底删除了几个记录
     public int delete(Integer id);
 }
