@@ -61,6 +61,7 @@
         </dependency>
 
         <!--lombok-->
+        <!--主要用于简化类创建使用到的get\set函数使用到的代码量-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
