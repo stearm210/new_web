@@ -13,6 +13,9 @@ class SpringbootMybatisCrudApplicationTests {
 
     @Test
     public void testDelete(){
-        empMapper.delete(17);
+        int delete=empMapper.delete(17);
+
+        //输出删除操作影响到的操作数
+        System.out.println(delete);
     }
 }
