@@ -25,12 +25,29 @@ public interface EmpMapper {
 
 
     //新增员工操作
-
     //这里的options注解可以用于返回主键操作
     @Options(useGeneratedKeys = true,keyProperty = "id")
     //使用注解进行插入操作
     @Insert("insert into emp(username, name, gender, image, job, entrydate, dept_id, create_time, update_time)\n" +
             "values (#{username},#{name},#{gender},#{image},#{job},#{entrydate},#{deptId},#{createTime},#{updateTime})")
     public void insert(Emp emp);
+
+
+
+    //更新员工操作
+    @Update("update emp set username=#{username},name=#{name},gender=#{gender},image=#{image},job=#{job},entrydate=#{entrydate},dept_id=#{deptId},update_time=#{updateTime}\n" +
+            "where id=#{id}")
+
+    //更新的参数有许多，因此这里使用一个Emp参数进行参数接待推送
+    public void update(Emp emp);
+
+
+    //根据id来查询员工
+//    @Select("select * from emp where id=#{id}")
+//    public Emp getById(Integer id);
+
+    //方案一：给字段起别名，使得别名与实体类属性一致
+    @Select("select id, username, password, name, gender, image, job, entrydate,"+" dept_id deptId, create_time createTime, update_time updateTime from emp where id=#{id}")
+    public Emp getById(Integer id);
 
 }
