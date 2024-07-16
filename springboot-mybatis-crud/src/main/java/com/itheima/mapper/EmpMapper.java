@@ -1,5 +1,6 @@
 package com.itheima.mapper;
 
+import com.itheima.pojo.Emp;
 import org.apache.ibatis.annotations.*;
 
 //这个mapper包中主要是用于编写SQL的操作代码的
@@ -23,4 +24,8 @@ public interface EmpMapper {
 
 
     //新增员工操作
+    //使用注解
+    @Insert("insert into emp(username, name, gender, image, job, entrydate, dept_id, create_time, update_time)\n" +
+            "values (#{username},#{name},#{gender},#{image},#{job},#{entrydate},#{dept_id},#{create_time},#{update_time})")
+    public void insert(Emp emp);
 }
