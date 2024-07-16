@@ -73,7 +73,8 @@ public interface EmpMapper {
 
     //改造之后的代码
     //concat函数主要是用于字符串拼接问题的
-    @Select("select * from emp where name like concat('%',#{name},'%') and gender=#{gender} and entrydate between #{begin} and #{end} order by update_time desc ")
-    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
+//    @Select("select * from emp where name like concat('%',#{name},'%') and gender=#{gender} and entrydate between #{begin} and #{end} order by update_time desc ")
+//    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
 
+    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
 }
