@@ -23,9 +23,14 @@ public interface EmpMapper {
     public int delete(Integer id);
 
 
+
     //新增员工操作
-    //使用注解
+
+    //这里的options注解可以用于返回主键操作
+    @Options(useGeneratedKeys = true,keyProperty = "id")
+    //使用注解进行插入操作
     @Insert("insert into emp(username, name, gender, image, job, entrydate, dept_id, create_time, update_time)\n" +
-            "values (#{username},#{name},#{gender},#{image},#{job},#{entrydate},#{dept_id},#{create_time},#{update_time})")
+            "values (#{username},#{name},#{gender},#{image},#{job},#{entrydate},#{deptId},#{createTime},#{updateTime})")
     public void insert(Emp emp);
+
 }
