@@ -43,21 +43,24 @@ public interface EmpMapper {
 
 
     //根据id来查询员工
-//    @Select("select * from emp where id=#{id}")
-//    public Emp getById(Integer id);
+    //方案三：在application.properties中编写代码开启mybatis驼峰自动命名映射开关
+    @Select("select * from emp where id=#{id}")
+    public Emp getById(Integer id);
 
     //方案一：给字段起别名，使得别名与实体类属性一致
 //    @Select("select id, username, password, name, gender, image, job, entrydate,"+" dept_id deptId, create_time createTime, update_time updateTime from emp where id=#{id}")
 //    public Emp getById(Integer id);
 
     //方案二：通过@Results,@Result注解手动映射封装
-    @Results({
-            @Result(column = "dept_id",property = "deptId"),
-            @Result(column = "create_time",property = "createTime"),
-            @Result(column = "update_time",property = "updateTime")
-    })
-    @Select("select * from emp where id=#{id}")
-    public Emp getById(Integer id);
+//    @Results({
+//            @Result(column = "dept_id",property = "deptId"),
+//            @Result(column = "create_time",property = "createTime"),
+//            @Result(column = "update_time",property = "updateTime")
+//    })
+//    @Select("select * from emp where id=#{id}")
+//    public Emp getById(Integer id);
+
+
 
 
 }
