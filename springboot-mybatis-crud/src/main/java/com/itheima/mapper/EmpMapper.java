@@ -3,6 +3,9 @@ package com.itheima.mapper;
 import com.itheima.pojo.Emp;
 import org.apache.ibatis.annotations.*;
 
+import java.time.LocalDate;
+import java.util.List;
+
 //这个mapper包中主要是用于编写SQL的操作代码的
 //接口本质上是一个实现类
 //这里用了一个mapper注解，并且定义了一个接口类empmapper进行sql语句的编写和操作
@@ -61,6 +64,12 @@ public interface EmpMapper {
 //    public Emp getById(Integer id);
 
 
+
+
+    //条件查询员工信息
+    //使用'%${name}%'可以见得使用$代替#更好，因为在百分号之间不能出现#
+    @Select("select * from emp where name like '%${name}%' and gender=#{gender} and entrydate between #{begin} and #{end} order by update_time desc ")
+    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
 
 
 }

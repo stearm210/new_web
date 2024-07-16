@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 //这个类主要是用于测试操作的
 @SpringBootTest
@@ -73,5 +74,13 @@ class SpringbootMybatisCrudApplicationTests {
     public void testGetById(){
         Emp emp=empMapper.getById(21);
         System.out.println(emp);
+    }
+
+    //根据条件查询员工信息
+    @Test
+    public void testList(){
+        //这里使用list集合将参数接到
+        List<Emp> empList=empMapper.list("张",(short)1,LocalDate.of(2010,1,1),LocalDate.of(2020,1,1));
+        System.out.println(empList);
     }
 }
