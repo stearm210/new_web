@@ -76,5 +76,6 @@ public interface EmpMapper {
 //    @Select("select * from emp where name like concat('%',#{name},'%') and gender=#{gender} and entrydate between #{begin} and #{end} order by update_time desc ")
 //    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
 
+    //动态条件查询
     public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
 }
