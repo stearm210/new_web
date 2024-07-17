@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.EmpMapper">
-    <!-- mapper的namespace为EmpMapper实现函数接口的路径 -->
-<!--    resultType:单条记录所封装的类型路径。这个例子中的emp是这次选择查询的返回类型-->
-    <!-- id的取值跟EmpMapper中调用的函数名一致 -->
-    <!-- select中编写sql语句 -->
-    <select id="list" resultType="com.itheima.pojo.Emp">
-        select * from emp where name like concat('%',#{name},'%') and gender=#{gender} and entrydate between #{begin} and #{end} order by update_time desc
-    </select>
+	<!-- mapper的namespace为EmpMapper实现函数接口的路径 -->
+	<!--    resultType:单条记录所封装的类型路径。这个例子中的emp是这次选择查询的返回类型-->
+	<!-- id的取值跟EmpMapper中调用的函数名一致 -->
+	<!-- select中编写sql语句 -->
+	<select id="list" resultType="com.itheima.pojo.Emp">
+		select *
+		from emp
+		<!-- where之后的if都是对应的查询条件
+		 这里表示，如果查询的name不为空时的处理操作等-->
+		where
+		<if test="name != null">
+			name like concat('%', #{name}, '%')
+		</if>
+		<if test="gender != null">
+			and gender = #{gender}
+		</if>
+		<if test="begin != null and end != null">
+			and entrydate between #{begin} and #{end}
+		</if>
+		order by update_time desc
+	</select>
+
 
 </mapper>
 

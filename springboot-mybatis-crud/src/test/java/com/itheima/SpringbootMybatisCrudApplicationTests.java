@@ -80,7 +80,8 @@ class SpringbootMybatisCrudApplicationTests {
     @Test
     public void testList(){
         //这里使用list集合将参数接到
-        List<Emp> empList=empMapper.list("张",(short)1,LocalDate.of(2010,1,1),LocalDate.of(2020,1,1));
+        //List<Emp> empList=empMapper.list("张",(short)1,LocalDate.of(2010,1,1),LocalDate.of(2020,1,1));
+        List<Emp> empList = empMapper.list("张", null, null,null);
         System.out.println(empList);
     }
 }
