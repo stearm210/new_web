@@ -3,9 +3,18 @@
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.EmpMapper">
-	<!-- 更新操作 -->
+	<!-- 动态更新员工信息操作 -->
 	<update id="update2">
-
+		update emp
+		set
+		<if test="username != null">username=#{username},</if>
+		<if test="name != null">name=#{name},</if>
+		<if test="gender != null">gender=#{gender},</if>
+		<if test="job != null">job=#{job},</if>
+		<if test="entrydate != null">entrydate=#{entrydate},</if>
+		<if test="deptId != null">#{deptId},</if>
+		<if test="updatename != null">#{updateTime}</if>
+		where id = #{id}
 	</update>
 
 	<!-- mapper的namespace为EmpMapper实现函数接口的路径 -->
