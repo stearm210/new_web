@@ -92,14 +92,14 @@ class SpringbootMybatisCrudApplicationTests {
     public void testUpdate2(){
         //构造员工对象
         Emp emp=new Emp();
-        emp.setId(19);
-        emp.setUsername("Tom111");
-        emp.setName("汤姆111");
-        emp.setGender((short)2);
+        emp.setId(20);
+        emp.setUsername("Tom222");
+        emp.setName("汤姆2");
+        emp.setGender((short)1);
         emp.setUpdateTime(LocalDateTime.now());
 
         //执行员工更新操作
-        empMapper.update(emp);
+        empMapper.update2(emp);
 
     }
 }
