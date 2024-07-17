@@ -3,8 +3,6 @@ package com.itheima.controller;
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.Result;
 import com.itheima.service.EmpService;
-import com.itheima.service.impl.EmpServiceA;
-import com.itheima.utils.XmlParserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
