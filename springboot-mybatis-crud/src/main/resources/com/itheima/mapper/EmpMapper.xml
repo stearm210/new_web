@@ -47,16 +47,14 @@
 	<delete id="deleteByIds">
 		/*foreach循环操作问题:
 		  比方说现在要遍历(18,19,20)这个数组s
-		collection:遍历的集合
+		collection:遍历的集合名字
 		item:遍历出来的元素
 		separtor:分隔符
 		open:遍历开始前拼接的SQL片段
 		close:遍历拼接结束后的SQL片段
 		*/
-		delete
-		from emp
-		where id in
-		<foreach collection="ids" item="id" separator="," open="!" close=")">
+		delete from emp where id in
+		<foreach collection="ids" item="id" separator="," open="(" close=")">
 			#{id}
 		</foreach>
 	</delete>

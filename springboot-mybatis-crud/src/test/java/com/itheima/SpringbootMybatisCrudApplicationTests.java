@@ -8,6 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 //这个类主要是用于测试操作的
@@ -101,5 +103,13 @@ class SpringbootMybatisCrudApplicationTests {
         //执行员工更新操作
         empMapper.update2(emp);
 
+    }
+
+
+    //批量删除员工 -- 13,14,15
+    @Test
+    public void testDeleteByIds(){
+        List<Integer> ids= Arrays.asList(13,14,15);
+        empMapper.deleteByIds(ids);
     }
 }
