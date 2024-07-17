@@ -78,4 +78,7 @@ public interface EmpMapper {
 
     //动态条件查询
     public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
+
+    //动态更新员工信息
+    public void update2(Emp emp);
 }

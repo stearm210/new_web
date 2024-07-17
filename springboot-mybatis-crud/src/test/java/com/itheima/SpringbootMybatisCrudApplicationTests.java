@@ -85,4 +85,21 @@ class SpringbootMybatisCrudApplicationTests {
         List<Emp> empList=empMapper.list(null,(short)1,null,null);
         System.out.println(empList);
     }
+
+
+    @Test
+    //更新员工操作
+    public void testUpdate2(){
+        //构造员工对象
+        Emp emp=new Emp();
+        emp.setId(18);
+        emp.setUsername("Tom111");
+        emp.setName("汤姆111");
+        emp.setGender((short)2);
+        emp.setUpdateTime(LocalDateTime.now());
+
+        //执行员工更新操作
+        empMapper.update(emp);
+
+    }
 }
