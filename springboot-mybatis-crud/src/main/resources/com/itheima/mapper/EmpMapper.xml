@@ -3,6 +3,13 @@
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itheima.mapper.EmpMapper">
+
+<!--	这里的sql片段定义了一个常规的选择表中数据的引用，提高性能-->
+	<sql id="commonSelect">
+		select id,username,password,name,gender,image,job,entrydate,dept_id,create_time,update_time
+		from emp
+	</sql>
+	
 	<!-- 动态更新员工信息操作 -->
 	<update id="update2">
 		update emp
@@ -25,8 +32,11 @@
 	<!-- id的取值跟EmpMapper中调用的函数名一致 -->
 	<!-- select中编写sql语句 -->
 	<select id="list" resultType="com.itheima.pojo.Emp">
-		select *
-		from emp
+-- 		select *
+-- 		from emp
+-- 定义一个标签选择引用，引用上面那个选择的属性
+         <include refid="commonSelect"/>
+
 		<!-- where之后的if都是对应的查询条件
 		 这里表示，如果查询的name不为空时的处理操作等-->
 		<where>
