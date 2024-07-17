@@ -19,6 +19,7 @@
 		where id = #{id}
 	</update>
 
+
 	<!-- mapper的namespace为EmpMapper实现函数接口的路径 -->
 	<!--    resultType:单条记录所封装的类型路径。这个例子中的emp是这次选择查询的返回类型-->
 	<!-- id的取值跟EmpMapper中调用的函数名一致 -->
@@ -42,6 +43,23 @@
 		order by update_time desc
 	</select>
 
+	<!-- 批量删除操作 -->
+	<delete id="deleteByIds">
+		/*foreach循环操作问题:
+		  比方说现在要遍历(18,19,20)这个数组s
+		collection:遍历的集合
+		item:遍历出来的元素
+		separtor:分隔符
+		open:遍历开始前拼接的SQL片段
+		close:遍历拼接结束后的SQL片段
+		*/
+		delete
+		from emp
+		where id in
+		<foreach collection="ids" item="id" separator="," open="!" close=")">
+			#{id}
+		</foreach>
+	</delete>
 
 </mapper>
 

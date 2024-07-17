@@ -81,4 +81,7 @@ public interface EmpMapper {
 
     //动态更新员工信息
     public void update2(Emp emp);
+
+    //批量删除数据的操作
+    public void deleteByIds(List<Integer> ids);
 }
