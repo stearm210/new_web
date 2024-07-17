@@ -12,16 +12,17 @@
 		from emp
 		<!-- where之后的if都是对应的查询条件
 		 这里表示，如果查询的name不为空时的处理操作等-->
-		where
-		<if test="name != null">
-			name like concat('%', #{name}, '%')
-		</if>
-		<if test="gender != null">
-			and gender = #{gender}
-		</if>
-		<if test="begin != null and end != null">
-			and entrydate between #{begin} and #{end}
-		</if>
+		<where>
+			<if test="name != null">
+				name like concat('%', #{name}, '%')
+			</if>
+			<if test="gender != null">
+				and gender = #{gender}
+			</if>
+			<if test="begin != null and end != null">
+				and entrydate between #{begin} and #{end}
+			</if>
+		</where>
 		order by update_time desc
 	</select>
 
