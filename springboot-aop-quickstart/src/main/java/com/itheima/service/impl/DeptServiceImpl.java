@@ -1,5 +1,6 @@
 package com.itheima.service.impl;
 
+import com.itheima.aop.MyLog;
 import com.itheima.mapper.DeptMapper;
 import com.itheima.pojo.Dept;
 import com.itheima.service.DeptService;
@@ -17,12 +18,14 @@ public class DeptServiceImpl implements DeptService {
 	@Autowired
 	private DeptMapper deptMapper;
 
+	@MyLog//加上自定义注解，用于改造切入点表达式
 	@Override
 	public List<Dept> list() {
 		List<Dept> deptList = deptMapper.list();
 		return deptList;
 	}
 
+	@MyLog//加上自定义注解，用于改造切入点表达式
 	@Override
 	public void delete(Integer id) {
 		//1. 删除部门
