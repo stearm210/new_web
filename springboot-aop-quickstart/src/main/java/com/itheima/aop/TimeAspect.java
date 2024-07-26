@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class TimeAspect {
 
 	//表明AOP的作用范围
-	@Around("execution(* com.itheima.service.*.*(..))")//切入点表达式
+	@Around("com.itheima.aop.MyAspect1.pt()")//切入点表达式
 	public Object recordTime(ProceedingJoinPoint joinPoint ) throws Throwable {
 		//1.记录开始时间
 		// 记录当前时间

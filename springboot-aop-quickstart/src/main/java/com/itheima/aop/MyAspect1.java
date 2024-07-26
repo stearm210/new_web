@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 public class MyAspect1 {
 
     //定义一个共同路径
+    //里面接上一个切入点表达式
     @Pointcut("execution(* com.itheima.service.impl.DeptServiceImpl.*(..))")
     public void pt(){}
 
