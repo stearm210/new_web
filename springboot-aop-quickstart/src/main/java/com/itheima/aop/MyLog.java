@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 
 //当前这个注解可以在哪些路径、范围生效
-@Target(ElementType.METHOD)
+@Target(ElementType.METHOD)//这里表示该定义作用在类的方法上。
 public @interface MyLog {
 }
