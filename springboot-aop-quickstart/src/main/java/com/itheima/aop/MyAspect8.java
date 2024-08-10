@@ -54,9 +54,6 @@ public class MyAspect8 {
 		return result;
 
 
-
-
-
 	}
 
 
